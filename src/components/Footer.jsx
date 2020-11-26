@@ -29,6 +29,7 @@ const Container1 = styled.div`
   }
 `;
 const Container3 = styled.div`
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +70,7 @@ const ReseauxSociaux = styled.div`
   align-items: center;
   width: 34vw;
   border-right: 1px solid white;
-  @media ${device.mobile}{
+  @media ${device.mobile} {
     border-right: 0px;
     display: flex;
     justify-content: center;
@@ -96,12 +97,14 @@ const Lieux = styled.div`
 `;
 
 const H4 = styled.h4`
+  color: white;
   font-size: 20px;
   @media ${device.mobile} {
     display: none;
   }
 `;
 const Adresse = styled.div`
+  color: white;
   display: flex;
   flex-direction: column;
   font-size: 14px;

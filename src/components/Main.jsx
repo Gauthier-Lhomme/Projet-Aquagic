@@ -1,6 +1,7 @@
 import { device } from "./Device.jsx";
 import styled from "styled-components";
-import RandomCard from "./random-card/randomCard";
+import { Link } from "react-router-dom";
+import RandomCard from "./random-card/randomCard.jsx";
 
 
 const All = styled.div`
@@ -13,16 +14,22 @@ const All = styled.div`
 
 const A = styled.a`
   color: white;
+  font-size: 20px;
   &:hover {
     color: rgb(255, 123, 0);
-    transition: 0.5s;
+  }
+  @media ${device.mobile} {
+    font-size: 16px;
   }
 `;
 
 const ButtonGrimoire = styled.button`
   background-color: black;
   border-radius: 30px;
+  width: 16vw;
   height: 6vh;
+  cursor: pointer;
+
   @media ${device.mobile} {
     width: 40vh;
   }
@@ -77,6 +84,9 @@ const DivTxtHistoire = styled.div`
   text-align: center;
   @media ${device.mobile} {
     padding-top: 3vh;
+    h1 {
+      padding: 0 3vw 0 3vw;
+    }
   }
 `;
 
@@ -135,13 +145,14 @@ const MainPage = () => {
               </LiCards>
               <LiCards>
                 <img src="/image/carte-droite.png" alt="Carte du Lac de montagne bouillant" />
-
               </LiCards>
             </UlCards>
             <DivButton>
-              <ButtonGrimoire type="button">
-                <A>Ouvrir le grimoire de Zendikar</A>
-              </ButtonGrimoire>
+              <Link to="/carte">
+                <ButtonGrimoire type="button">
+                  <A>Ouvrir le grimoire de Zendikar</A>
+                </ButtonGrimoire>
+              </Link>
             </DivButton>
           </div>
         </DivSecondSection>

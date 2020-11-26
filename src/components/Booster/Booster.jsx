@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import ReactCardFlip from "react-card-flip";
 import Spinner from "../recherch-bar-rapid/spinner";
+
 import {
   Gallery,
   Title,
@@ -13,6 +14,7 @@ import {
   ButtonClear,
 } from "./Boosterstyled";
 
+
 class Booster extends React.Component {
   constructor() {
     super();
@@ -23,18 +25,17 @@ class Booster extends React.Component {
       loading: false,
       isFlipped: false,
     };
-    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(e) {
+  handleClick = (e) => {
     e.preventDefault();
     this.setState((prevState) => ({ isFlipped: !prevState.isFlipped }));
-  }
+  };
   handleChange = (e) => {
     this.setState({ code: e.target.value });
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.getBosster();
+    this.getBooster();
   };
   handleReset = (e) => {
     e.preventDefault();
@@ -46,15 +47,13 @@ class Booster extends React.Component {
   async componentDidMount() {
     const res = await axios.get("https://api.magicthegathering.io/v1/sets");
     this.setState({ sets: res.data.sets });
+    console.log(this.state.sets);
   }
 
-  getBosster = async () => {
+  getBooster = async () => {
     this.setState({ loading: true });
-    const res = await axios.get(
-      `https://api.magicthegathering.io/v1/sets/${this.state.code}/booster`
-    );
+    const res = await axios.get(`https://api.magicthegathering.io/v1/sets/${this.state.code}/booster`);
     this.setState({ cards: res.data.cards, loading: false });
-    
   };
 
   render() {
@@ -92,20 +91,9 @@ class Booster extends React.Component {
             {cards.map((card) => {
               return (
                 <div>
-                  <ReactCardFlip
-                    isFlipped={this.state.isFlipped}
-                    flipDirection="vertical"
-                  >
-                    <img
-                      src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg"
-                      alt=""
-                      onClick={this.handleClick}
-                    />
-                    <img
-                      src={card.imageUrl}
-                      alt=""
-                      onClick={this.handleClick}
-                    />
+                  <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
+                    <img src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg" alt="" onClick={this.handleClick} />
+                    <img src={card.imageUrl} alt="" onClick={this.handleClick} />
                   </ReactCardFlip>
                 </div>
               );

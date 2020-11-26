@@ -35,12 +35,13 @@ export const CardContainer = styled.div`
   }
   @media ${device.mobile} {
     height: 120vh;
+    max-height: 200vh;
+    padding: 0 auto;
     .btn {
       width: 90px;
       height: 14px;
       font-size: 10px;
-      margin-top: 22vh;
-      margin-left: 18vh;
+      margin: 22vh auto;
     }
   }
 `;
@@ -69,8 +70,7 @@ export const Details = styled.div`
   @media ${device.mobile} {
     flex-direction: column;
     align-items: center;
-    margin-top: 25vh;
-    margin-left: 5vh;
+    margin: 25vh auto;
     max-width: 300px;
     max-height: 400px;
   }

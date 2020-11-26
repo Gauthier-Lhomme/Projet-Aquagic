@@ -10,6 +10,7 @@ const NavigationBar = styled.nav`
   border-bottom: 2px solid white;
   display: flex;
   justify-content: space-between;
+  padding: 0 1vw 0 1vw;
   @media ${device.mobile} {
     height: 10vh;
   }
@@ -51,8 +52,9 @@ const Logo = styled.img`
   height: 8vh;
 
   @media ${device.mobile} {
-    width: 20vh;
+    width: 13vh;
     height: 10vh;
+    margin-left: 2vw;
   }
 `;
 
@@ -70,35 +72,24 @@ const Navbar = () => {
   return (
     <NavigationBar>
       <Link to="/">
-        <Logo
-          src="/image/Logo-magic.jpg"
-          alt="Logo du jeu Magic The Gathering"
-          id="logo"
-        />
+        <Logo src="/image/Logo-magic.jpg" alt="Logo du jeu Magic The Gathering" id="logo" />
       </Link>
       <Ul>
         <Li>
           <A to="/histoire">Histoire</A>
         </Li>
-        <Li>
-          <A to="/regles"> Règles</A>
-        </Li>
+
         <Li>
           <A to="/carte">Cartes </A>
         </Li>
-        <Li>
-          <A to="/creation">Créer </A>
-        </Li>
+
         <Li>
           <A to="/booster">Booster</A>
         </Li>
       </Ul>
       <RechercheBar />
       <Burger className="App" id="outer-container">
-        <Sidebar
-          pageWrapId={"page-wrap"}
-          outerContainerId={"outer-container"}
-        />
+        <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
       </Burger>
     </NavigationBar>
   );

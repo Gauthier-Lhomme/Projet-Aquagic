@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { device } from "../Device";
 
 export const SearchContainer = styled.div`
-  margin: 20px 30px;
+  margin: 1.3vh 1vh 0 0;
   .input-container {
     display: flex;
     flex-direction: row;
@@ -17,6 +17,9 @@ export const SearchContainer = styled.div`
       margin-right: 180px;
       margin-top: 10px;
     }
+
+    margin-left: 3.5vw;
+    max-height: 500vh;
   }
 `;
 export const Results = styled.div`
@@ -90,6 +93,7 @@ export const Input = styled.input`
   left: 30%;
   top: 200px;
   background: transparent;
+  margin: auto 0;
   &:focus {
     outline: none;
   }
@@ -106,6 +110,7 @@ export const Input = styled.input`
     width: 120px;
     height: 20px;
     font-size: 10px;
+    margin-top: 10px;
   }
 `;
 
@@ -151,6 +156,7 @@ export const Loading = styled.div`
     display: block;
   }
   @media ${device.mobile} {
+    margin-right: 50vw;
     img {
       width: 18px;
       margin-top: 5px;
