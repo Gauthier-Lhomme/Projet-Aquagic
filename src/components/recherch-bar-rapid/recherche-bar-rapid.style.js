@@ -149,6 +149,7 @@ export const Button = styled.button`
 
 //Spinner
 export const Loading = styled.div`
+  width: 50%;
   img {
     width: 50px;
     margin: 40px auto;
@@ -158,6 +159,9 @@ export const Loading = styled.div`
     margin-right: 50vw;
     img {
       width: 18px;
+      margin-top: 5px;
+      margin-right: 240px;
+      display: block;
     }
   }
 `;

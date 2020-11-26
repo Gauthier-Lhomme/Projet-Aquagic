@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import RandomCard from "./random-card/randomCard.jsx";
 
+
 const All = styled.div`
   margin: 0;
   padding: 0;
@@ -114,9 +115,11 @@ const MainPage = () => {
   return (
     <All>
       <section>
+
         <DivFirstSection1>
           <RandomCard></RandomCard>
         </DivFirstSection1>
+
 
         <DivFirstSection2></DivFirstSection2>
       </section>
@@ -134,6 +137,7 @@ const MainPage = () => {
           <div>
             <UlCards>
               <LiCards>
+
                 <img src="/image/carte-gauche.png" alt="Carte de la Canalieuse magmatique" />
               </LiCards>
               <LiCards>

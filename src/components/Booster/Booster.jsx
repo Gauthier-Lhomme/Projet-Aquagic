@@ -2,7 +2,18 @@ import React from "react";
 import axios from "axios";
 import ReactCardFlip from "react-card-flip";
 import Spinner from "../recherch-bar-rapid/spinner";
-import { Gallery, Title, BgImage, CallApi, SetForm, Select, Input, ButtonClear } from "./Boosterstyled";
+
+import {
+  Gallery,
+  Title,
+  BgImage,
+  CallApi,
+  SetForm,
+  Select,
+  Input,
+  ButtonClear,
+} from "./Boosterstyled";
+
 
 class Booster extends React.Component {
   constructor() {
